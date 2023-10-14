@@ -1,0 +1,32 @@
+@startuml dd
+
+class Huerto {
+  - id: int
+  - nombre: String
+  - ubicacion: String
+  - superficie: double
+}
+
+class Arbol {
+  - id: int
+  - idHuerto: int
+  - idEspecie: int
+}
+
+class Especie {
+  - id: int
+  - nombre: String
+}
+
+class Variedad {
+  - id: int
+  - nombre: String
+  - idEspecie: int
+}
+
+Huerto "1" -- "n" Arbol
+Arbol "n" -- "1" Especie
+Especie "1" -- "n" Variedad
+
+@enduml
+
